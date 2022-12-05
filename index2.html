@@ -184,6 +184,27 @@
 <section>
     <h1 id="greeting"></h1>
 
+    
+    <form method="post">
+               <p> Номер Телефона:<p/>
+               <p><input name="name"/><p/>
+               <p> Адрес доставки:<p/>
+
+                <!-- это пустой контейнер для вывода пользователю названия точки и ее адреса -->
+                <div id="address"></div>
+
+                <!-- в это поле поместится ID постамата или пункта выдачи -->
+                <input type="hidden" name="pickpoint_id" id="pickpoint_id" value="" />
+     </form>
+    <div id="buttons">
+        <button onclick="PickPoint.open(my_function);return false">Выбрать ПВЗ</button>
+    </div>
+
+    
+    
+    
+    
+    
     <div id="buttons">
         <button onclick="webviewExpand();">Expand Webview</button>
         <small>(The window goes fullscreen)</small>
@@ -270,40 +291,17 @@
             Telegram.WebApp.sendData(new Date().toString());
         }
     }
+    
+    
+    
+    function my_function(result){
+                        // устанавливаем в скрытое поле ID терминала
+                        document.getElementById('pickpoint_id').value=result['id'];
 
-    function requestLocation() {
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                document.querySelector('#locationData').innerHTML = '(' + position.coords.latitude + ', ' + position.coords.longitude + ')';
-            });
-        } else {
-            document.querySelector('#locationData').innerHTML = '(Geolocation is not supported in this browser)';
-        }
-
-        return false;
+                        // показываем пользователю название точки и адрес доствки
+                        document.getElementById('address').innerHTML=result['name']+'<br />'+result['address'];
     }
 
-    function requestVideo() {
-        if (navigator.mediaDevices) {
-            navigator.mediaDevices.getUserMedia({ audio: false, video: true }).then(function(stream) {
-                document.querySelector('#videoData').innerHTML = '(Access granted)';
-            });
-        } else {
-            document.querySelector('#videoData').innerHTML = '(Media devices is not supported in this browser)';
-        }
-        return false;
-    }
-
-    function requestAudio() {
-        if (navigator.mediaDevices) {
-            navigator.mediaDevices.getUserMedia({ audio: true, video: false }).then(function(stream) {
-                document.querySelector('#audioData').innerHTML = '(Access granted)';
-            });
-        } else {
-            document.querySelector('#audioData').innerHTML = '(Media devices is not supported in this browser)';
-        }
-        return false;
-    }
 </script>
 </body>
 </html>
