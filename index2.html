@@ -220,11 +220,11 @@
         let addr = document.getElementById('pickpoint_address').innerHTML;
         let phonenum = null
         if (ValidPhone()){
-            let phonenum = document.getElementById('phone').value;
+            phonenum = document.getElementById('phone').value;
         }      
                 
         
-        if (addr != null && phonenum != null) {
+        if (phonenum != null) {
             let datastring = addr + "\n" + phonenum;
             Telegram.WebApp.sendData(datastring);
         }
