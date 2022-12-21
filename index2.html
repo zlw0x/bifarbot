@@ -189,6 +189,7 @@
     <!-- pattern="^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$" -->
     <p>Номер телефона:</p>
     <input id="phone" value="">
+    <div id="message"></div>
     
     <p>Адрес доставки:</p>
     <div id="pickpoint_address"></div>
@@ -223,7 +224,7 @@
         }      
                 
         
-        if (addr || phonenum) != null {
+        if (addr || phonenum != null) {
             let datastring = addr + "\n" + phonenum;
             Telegram.WebApp.sendData(datastring);
         }
