@@ -232,7 +232,7 @@
     }
     
     function ValidPhone() {
-    var re = ^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$;
+    var re = /^((8|\+7)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{7,10}$/;
     var myPhone = document.getElementById('phone').value;
     var valid = re.test(myPhone);
     if (valid) output = 'Номер телефона введен правильно!';
