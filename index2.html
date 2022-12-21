@@ -216,9 +216,8 @@
     }
 
     function sendTime() {
-            Telegram.WebApp.sendData(function() {
-                document.getElementById('pickpoint_address').innerHTML);
-            }
+            Telegram.WebApp.sendData(document.getElementById('pickpoint_address').innerHTML);
+        
     }
 
     function my_function(result) {
