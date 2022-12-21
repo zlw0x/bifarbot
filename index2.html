@@ -185,12 +185,16 @@
 <section>
     
 <div id="head">
-                <p>Адрес доставки:</p>
-                <div id="pickpoint_address"></div>
-                <div id="pickpoint_name"></div>
-                <a href="#" onclick="PickPoint.open(my_function);return false">Выбрать ПВЗ</a>
-                <input type="hidden" name="pickpoint_id" id="pickpoint_id" value="" /><br /><br />
-              </div>  
+    
+    
+    <p>Номер телефона:</p>
+    <input id="phone" value="">
+    
+    <p>Адрес доставки:</p>
+    <div id="pickpoint_address"></div>
+    <a href="#" onclick="PickPoint.open(my_function);return false">Выбрать ПВЗ</a>
+    <input type="hidden" name="pickpoint_id" id="pickpoint_id" value="" /><br /><br />
+</div>  
 <div id="buttons">
         <button id="btnTime" onclick="sendTime();">Подтвердить</button>
         <small>И перейти к оплате</small>
