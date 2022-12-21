@@ -198,7 +198,7 @@
     <input type="hidden" name="pickpoint_id" id="pickpoint_id" value="" /><br /><br />
 </div>  
 <div id="buttons">
-        <button id="btnTime" onclick="sendTime();return false">Подтвердить</button>
+        <button id="btnTime" onclick="sendTime();">Подтвердить</button>
         <small>И перейти к оплате</small>
     </div>
 
@@ -224,7 +224,7 @@
         }      
                 
         
-        if ((phonenum != null) && (addr != "") {
+        if ((phonenum != null) && (addr != '')){
             let datastring = addr + "\n\nНомер телефона:\n+7" + phonenum;
             Telegram.WebApp.sendData(datastring);
         }
