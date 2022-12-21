@@ -224,7 +224,7 @@
         }      
                 
         
-        if (addr || phonenum != null) {
+        if (addr != null && phonenum != null) {
             let datastring = addr + "\n" + phonenum;
             Telegram.WebApp.sendData(datastring);
         }
