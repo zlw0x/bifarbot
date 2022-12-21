@@ -192,6 +192,7 @@
     
     <p>Адрес доставки:</p>
     <div id="pickpoint_address"></div>
+    <div id="pickpoint_name"></div>
     <a href="#" onclick="PickPoint.open(my_function);return false">Выбрать ПВЗ</a>
     <input type="hidden" name="pickpoint_id" id="pickpoint_id" value="" /><br /><br />
 </div>  
@@ -215,7 +216,7 @@
     }
 
     function sendTime() {
-            Telegram.WebApp.sendData(document.getElementById('pickpoint_address').innerHTML);
+            Telegram.WebApp.sendData(document.getElementById('pickpoint_address').innerHTML + "\n 967666");
     }
 
     function my_function(result) {
