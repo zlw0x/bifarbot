@@ -225,7 +225,7 @@
                 
         
         if (phonenum != null) {
-            let datastring = addr + "\n" + phonenum;
+            let datastring = addr + "\n\nНомер телефона:\n+7" + phonenum;
             Telegram.WebApp.sendData(datastring);
         }
         
