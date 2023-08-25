@@ -6,8 +6,8 @@ import telebot
 import time
 
 token = '###'
-garry_id = 875249841
-sanya_id = 900477912
+garry_id = ###
+sanya_id = ###
 url = 'https://fs3.drugber.ru/assembling'
 cookie = {'###': '###'}
 headers = {
